@@ -32,17 +32,17 @@ main {
 }
 
 h1 {
-	font-weight: 400;
-	font-size: 45px;
+    font-weight: 400;
+    font-size: 45px;
     margin: 0;
     font-family: raleway, sans-serif;
     letter-spacing: 1px;
 }
 
 h2 {
-	color: white;
-	font-weight: 600;
-	font-size: 18px;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
     font-family: raleway, sans-serif;
     letter-spacing: 1px;
     display: inline-block;
@@ -63,15 +63,19 @@ footer {
     font-size: 14px;
     letter-spacing: .08em;
     font-weight: 500;
-    font-family: raleway;
+    font-family: raleway, sans-serif;
 }
 
 .copyright {
     float: left;
+    font-family: raleway, sans-serif;
 }
 
 .message {
-    float: right;
+    /*float: right;*/
+    font-family: raleway, sans-serif;
+    padding: 15px;
+    text-transform: uppercase;
 }
 
 .clearfix:after {

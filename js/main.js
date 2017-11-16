@@ -26,7 +26,6 @@ var cards = [
 
 var cardsInPlay = [];
 
-
 var checkForMatch = function() {
 
 if (cardsInPlay[0] === cardsInPlay[1]) {
@@ -37,36 +36,42 @@ else
 alert("Sorry, try again.");
 } };
 
-var flipCard = function(cardID) {
+var flipCard = function() {
 
-cardsInPlay.push(cards[cardID].rank);
+	var cardId = this.getAttribute('data-id');
+    console.log("You picked " + cards[cardId].rank);
 
-	console.log("You picked " + cards[cardID].rank);
+   cardsInPlay.push(cards[cardId].rank);
 	
+	this.setAttribute("src", cards[cardId].cardImage);
 
 if(cardsInPlay.length === 2) {
 	checkForMatch();
+	cardsInPlay = [];
 }
 
-   console.log(cards[cardID].cardImage);
-   console.log(cards[cardID].suit);
+  console.log("You saw " + cards[cardId].cardImage);
+  console.log("You got " + cards[cardId].suit);
 
 };
 
-    flipCard(0);
-	flipCard(2);
+var createBoard = function() {
+
+for (var i = 0; i < cards.length; i++) {
+
+var cardElement = document.createElement('img');
+
+cardElement.setAttribute('src', 'images/back.png');
+cardElement.setAttribute('data-id', i);
+cardElement.addEventListener('click', flipCard);
+
+document.getElementById('game-board').appendChild(cardElement);
+
+}
+
+};
+
+createBoard();
 
 
 
-
-
-
-
-/* Could you use truthys/falseys here?
-
-
-
-/*
-console.log("User flipped " + cardOne);
-console.log("User flipped " + cardTwo);
-*/
